@@ -1,5 +1,106 @@
 @import "partial/typography";
 
-body {
-  background-color: red;
+html {
+  background-color: #333333af;
+
+  color: #fff;
+
+  font-family: 'Open Sans', sans-serif;
 }
+
+body {
+  margin: 0;
+
+  background-image: linear-gradient(to top, #333333, #33333340), url("../assets/images/amadeus-bg.jpg");
+  background-position: center;
+  background-size: auto 100%, 102vw auto;
+  background-repeat: no-repeat;
+}
+
+main {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  backdrop-filter: brightness(0.3) blur(10px) grayscale(0.7);
+
+  h1 {
+    max-width: 75%;
+  }
+}
+
+.container {
+  width: 75vw;
+  max-width: 1260px;
+  height: calc(100% - 80px);
+
+  margin: 0 auto;
+  padding: 32px 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header, footer {
+  width: 100%;
+}
+
+header {
+  margin-bottom: auto;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.contacts, .logos, .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+
+.contacts {
+  justify-content: space-evenly;
+
+  .contact {
+
+  }
+}
+
+.links {
+  justify-content: space-around;
+  margin-top: auto;
+
+  .link {
+    flex: 0 1 calc(50% - 12px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img, svg {
+      width: 100%;
+      height: auto;
+      max-width: 230px;
+    }
+  }
+}
+
