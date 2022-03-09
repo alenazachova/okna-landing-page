@@ -1,0 +1,24 @@
+{
+  "name": "amadeus-okna",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielChomat/amadeus-okna.git"
+  },
+  "author": "Daniel Chomat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielChomat/amadeus-okna/issues"
+  },
+  "homepage": "https://github.com/DanielChomat/amadeus-okna#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-sass": "^5.1.0"
+  }
+}
