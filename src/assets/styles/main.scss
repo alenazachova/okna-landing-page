@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
 
-  background-image: radial-gradient(closest-corner, #646464 0, #646464D6 70%, #64646466 100%), url("../images/amadeus-bg.jpg");
+  background-image: radial-gradient(closest-corner, #333333E6 0, #333333D6 30%, #33333366 100%), url("../images/amadeus-bg.jpg");
   background-position: center;
   background-size: auto 100%, cover;
   background-repeat: no-repeat;
@@ -31,7 +31,7 @@ main {
   }
 
   h1 {
-    max-width: 75%;
+    max-width: 85%;
     @media only screen and (max-width: 768px) {
       max-width: 100%;
     }
@@ -50,8 +50,14 @@ main {
   flex-direction: column;
   align-items: center;
 
+  @media only screen and (max-width: 1260px) {
+    width: 100%;
+  }
+
   @media only screen and (max-width: 576px) {
     width: 100%;
+
+    padding: 24px 16px;
   }
 }
 
@@ -73,6 +79,10 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
 
   text-align: center;
 }
@@ -89,6 +99,15 @@ footer {
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
+
+  img {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    margin-bottom: 32px;
+  }
 }
 
 .icon-box {
@@ -139,6 +158,32 @@ footer {
     }
   }
 
+  @media only screen and (max-width: 576px) {
+    gap: 12px;
+
+    &__icon {
+      min-width: 32px;
+      width: 32px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      &--small {
+        svg {
+          width: 16px;
+        }
+      }
+    }
+
+    &__link {
+      &:link, &:visited {
+        font-size: 16px;
+      }
+    }
+  }
+
   &--bigger {
     gap: 20px;
 
@@ -146,10 +191,12 @@ footer {
       &__icon {
         min-width: 52px;
         width: 52px;
+
         svg {
           width: 32px;
           height: 32px;
         }
+
         &--small {
           svg {
             width: 28px;
@@ -158,9 +205,39 @@ footer {
       }
 
       &__link {
-        font-size: 20px;
+        &:link, &:visited {
+          font-size: 20px;
+        }
       }
+    }
 
+    @media only screen and (max-width: 576px) {
+      gap: 16px;
+
+      .icon-box {
+        &__icon {
+          min-width: 40px;
+          width: 40px;
+
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+
+          &--small {
+            svg {
+              width: 18px;
+            }
+          }
+        }
+
+        &__link {
+          &:link, &:visited {
+            font-size: 18px;
+          }
+        }
+
+      }
     }
   }
 }
@@ -183,7 +260,7 @@ footer {
 }
 
 .articles {
-  margin-top: 64px;
+  //margin-top: 64px;
 
   display: flex;
   flex-direction: column;
