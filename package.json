@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,7 @@
   },
   "homepage": "https://github.com/DanielChomat/amadeus-okna#readme",
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-connect": "^5.7.0",
-    "gulp-sass": "^5.1.0"
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.49.9"
   }
 }
