@@ -266,6 +266,10 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+
+  &--amadeus {
+    margin-top: 72px;
+  }
 }
 
 .links {
@@ -293,6 +297,20 @@ footer {
       width: 100%;
       height: auto;
       max-width: 230px;
+    }
+
+    a, a:link, a:visited {
+      span {
+        display: block;
+        margin-top: 16px;
+
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 500;
+
+        text-align: center;
+
+      }
     }
   }
 }
