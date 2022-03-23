@@ -19,7 +19,7 @@ body {
 
 main {
   display: flex;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 
   backdrop-filter: brightness(0.7) blur(10px) grayscale(0.3);
