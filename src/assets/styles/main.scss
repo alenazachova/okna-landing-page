@@ -2,88 +2,36 @@
 
 
 html {
-  background-color: #333333af;
-
+  font-family: 'Nunito Sans', sans-serif;
+  // font-family: "Open Sans", sans-serif;
   color: #fff;
 
-  font-family: 'Open Sans', sans-serif;
 }
 
 body {
   margin: 0;
-
-  background-image: radial-gradient(closest-corner, #333333E6 0, #333333D6 30%, #33333366 100%), url("../images/amadeus-bg.jpg");
-  background-position: center;
-  background-size: auto 100%, cover;
-  background-repeat: no-repeat;
 }
 
-main {
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
 
-  backdrop-filter: brightness(0.7) blur(10px) grayscale(0.3);
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    min-height: 100vh;
-    height: 100%;
-  }
-
-  h1 {
-    max-width: 85%;
-    @media only screen and (max-width: 768px) {
-      max-width: 100%;
-    }
-  }
-}
-
-.container {
-  width: 75vw;
-  max-width: 1260px;
-
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media only screen and (max-width: 1260px) {
-    width: 100%;
-  }
-
-  @media only screen and (max-width: 576px) {
-    width: 100%;
-
-    padding: 24px 16px;
-  }
-}
-
-header, footer {
+header, footer, section {
   width: 100%;
 }
 
 header {
   margin-bottom: auto;
+  box-shadow: 12px 69px 150px rgba(0, 0, 0, 0.6);
+  background-color: #000000;
+  background-image: linear-gradient(to bottom, #000000 0%, #000000 20%, rgba(0, 0, 0, 0) 100%);
+  
+  
+  @media only screen and (max-width: 576px) {
+  padding: 15px;}
 }
 
 footer {
   margin-top: auto;
 
   padding-top: 32px;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: 100%;
-
-  text-align: center;
 }
 
 .contacts, .logos, .links {
@@ -97,16 +45,12 @@ footer {
 .logo {
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
 
   img {
     width: 100%;
     max-width: 320px;
   }
 
-  @media only screen and (max-width: 576px) {
-    margin-bottom: 32px;
-  }
 }
 
 .icon-box {
@@ -119,12 +63,8 @@ footer {
   gap: 16px;
 
   &__icon {
-    min-width: 40px;
-    width: 40px;
-    background-color: rgba(16, 63, 143, .85);
-    border-radius: 50%;
-    aspect-ratio: 1 / 1;
-
+    min-width: 17px;
+    width: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,7 +73,7 @@ footer {
       width: 24px;
       height: 24px;
 
-      fill: #ffffff;
+      fill: #000;
     }
 
     &--small {
@@ -257,19 +197,6 @@ footer {
   }
 }
 
-.articles {
-  //margin-top: 64px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-
-  &--amadeus {
-    margin-top: 72px;
-  }
-}
-
 .links {
   justify-content: space-around;
   margin-top: auto;
@@ -369,49 +296,6 @@ h4 {
   }
 }
 
-html {
-  background-color: rgba(51, 51, 51, 0.6862745098);
-  color: #fff;
-  font-family: 'Nunito Sans', sans-serif;
-  // font-family: "Open Sans", sans-serif;
-}
-
-body {
-  margin: 0;
-  background-image: radial-gradient(
-      closest-corner,
-      rgba(51, 51, 51, 0.9019607843) 0,
-      rgba(51, 51, 51, 0.8392156863) 30%,
-      rgba(51, 51, 51, 0.4) 100%
-    ),
-    url("../images/amadeus-bg.jpg");
-  background-position: center;
-  background-size: auto 100%, cover;
-  background-repeat: no-repeat;
-}
-
-main {
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
-  backdrop-filter: brightness(0.7) blur(10px) grayscale(0.3);
-}
-@media only screen and (max-width: 768px) {
-  main {
-    width: 100%;
-    min-height: 100vh;
-    height: 100%;
-  }
-}
-main h1 {
-  max-width: 85%;
-}
-@media only screen and (max-width: 768px) {
-  main h1 {
-    max-width: 100%;
-  }
-}
-
 .container {
   width: 100vw;
   max-width: 1820px;
@@ -419,6 +303,8 @@ main h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+
 }
 @media only screen and (max-width: 1260px) {
   .container {
@@ -428,24 +314,29 @@ main h1 {
 @media only screen and (max-width: 576px) {
   .container {
     width: 100%;
-    padding: 24px 16px;
   }
 }
 .gcm-container {
-  width: 75vw;
   max-width: 1011px;
   margin: 0 auto;
-  padding: 32px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media only screen and (max-width: 576px) {
+   width: 100vw;
+  }
 }
 .logo-okna,
 .amadeus-logo {
   flex: 0 1 20%;
+  @media only screen and (max-width: 576px) {
+  flex: 0 1 100%;
+   }
 }
 .title {
-  flex: 0 1 60%;
+  flex: 1 1 100%;
+  @media only screen and (max-width: 1200px) {
+  flex: 1 1 100%;}
 }
 
 .bathroom {
@@ -455,7 +346,6 @@ main h1 {
   background-size: 100%;
   min-height: 941px;
 }
-
 
 .bg-bath {
   width: 100%;
@@ -485,10 +375,44 @@ main h1 {
 }
 
 .contact-us {
-  background: #fff;
-  padding-top: 50px;
-  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  max-width: 1100px;
+  margin: 0 auto;
+  @media only screen and (max-width: 576px) {
+    flex-wrap: wrap;
+  }
 }
+
+.interesting {
+  display: flex;
+  flex-direction: row;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.interesting h3 {
+  margin-top: 0;
+}
+
+.about {
+  background: #fff;
+  padding-top: 115px;
+  padding-bottom: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media only screen and (max-width: 1200px) {
+    padding-top: 15px;
+    padding-bottom: 0;
+  }
+
+  @media only screen and (max-width: 576px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+ 
 
 footer {
   display: flex;
@@ -498,10 +422,12 @@ footer {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
   color: #fff;
 }
+
 footer h3 {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 17px;
+
 }
 footer a {
   color: #fff;
@@ -509,22 +435,26 @@ footer a {
 .footer-together {
   display: flex;
   padding-bottom: 46px;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0 15px 15px;
+  }
+
+  @media only screen and (max-width: 576px) {
+   flex-wrap: wrap;
+   padding-bottom: 0px;
+    }
 }
 
-.interesting {
-  display: flex;
-  flex-direction: row;
-  flex-direction: column;
-  max-width: 1260px;
-  margin: 0 auto;
-}
-.interesting h3 {
-  margin-top: 0;
-}
 .gcm-footer__left {
+
+  a {
+    font-size: 14px;
+  }
   a {
     font-weight: 300;
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
@@ -532,17 +462,43 @@ footer a {
   display: flex;
   flex-direction: column;
   flex: 0 1 33%;
+
+  @media only screen and (max-width: 576px) {
+  flex: 0 1 100%;
+  }
 }
 .gcm-bottom {
   padding-bottom: 39px;
   padding-top: 26px;
   position: relative;
+  font-size: 13px;
   display: flex;
   justify-content: space-between;
   font-weight: 300;
 
-  &--left, &--right {
+  @media only screen and (max-width: 1200px) {
+    padding: 0 15px;
+  }
+
+  @media only screen and (max-width: 576px) {
+  padding: 0 15px;  
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+     }
+  &__left {
     display: flex;
+    align-items: center;
+    a {
+      padding-left: 5px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+&--right {
+    display: flex;
+    align-items: center;
     flex:0 1 50%;
     p {
       margin: 0;
@@ -563,26 +519,73 @@ footer a {
 }
 
 .gcm-footer__center {
-  img {
-    width: 100%;
-    max-width: 20%;
+
+  .socials {
+    display: flex;
+justify-content: center;
+margin-left: 15%;
   }
+  .social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+    img {
+      width: 100%;
+      max-width: 40%;
+      @media only screen and (max-width: 1200px) {
+        max-width: 60%;
+      }
+    }
+  }
+  .social-amadeus {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    @media only screen and (max-width: 1200px) {
+      margin-right: 20px;
+    }
+    img {
+      width: 100%;
+      max-width: 70%;
+      @media only screen and (max-width: 1200px) {
+        max-width: 90%;
+      }
+    }
+  }
+  
   display: flex;
   flex-direction: row;
   flex: 0 1 33%;
+  @media only screen and (max-width: 576px) {
+    flex: 0 1 100%;
+    padding-top: 15px;
+  }
 }
+
 .gcm-footer__right {
   display: flex;
+  text-align: right;
   flex-direction: column;
   flex: 0 1 33%;
+
+ 
+  @media only screen and (max-width: 576px) {
+    padding: 15px 0;
+    flex: 0 1 100%;
+    text-align: left;
+    }
+ 
   a {
     font-weight: 300;
+    font-size: 14px;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
   }
 }
+
 .gcm-footer__right img {
   width: 100%;
   max-width: 20%;
@@ -592,18 +595,46 @@ footer a {
   display: flex;
 }
 
-.gcm-left,
-.gcm-right {
+.gcm-left {
+  h2 {
+    text-transform: uppercase;
+    font-size: 44px;
+    font-weight: 600;
+    @media only screen and (max-width: 576px) {
+      font-size: 28px;
+    }
+  }
   display: flex;
+  color: #000;
   flex-direction: column;
   flex: 0 1 50%;
+  background: url(../images/uzovovky.svg) no-repeat bottom 8% right 60%,  url(../images/uvozovky_dolni.svg) no-repeat left 18px bottom 40%;
+
+  @media only screen and (max-width: 576px) {
+   flex: 1 1 100%;
+  }
 }
+
+.gcm-right {
+  display: flex;
+  color: #000;
+  flex-direction: column;
+  flex: 0 1 50%;
+
+  @media only screen and (max-width: 576px) {
+    flex: 1 1 100%;
+   }
+}
+
 .gcm-left .name {
   text-transform: uppercase;
   padding-bottom: 5px;
   font-size: 20px;
   font-weight: 600;
   position: relative;
+  @media only screen and (max-width: 576px) {
+    font-size: 18px;
+  }
 
   &::after {
     position: absolute;
@@ -615,6 +646,7 @@ footer a {
     background:  #000000;
   }
 }
+
 .gcm-contacts {
   padding-top: 18px;
   display: flex;
@@ -622,14 +654,17 @@ footer a {
   color: #000;
 }
 
-header,
-footer {
-  width: 100%;
-}
+
 
 header {
   margin-bottom: auto;
   padding: 32px 16px;
+  width: 100%;
+  @media only screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+ 
 }
 
 .title {
@@ -637,6 +672,9 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 576px) {
+    flex-wrap: wrap;
+  }
 }
 
 .title h1 {
@@ -646,6 +684,13 @@ header {
   font-weight: 200;
   display: flex;
   flex-direction: row;
+
+  @media only screen and (max-width: 576px) {
+  font-size: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  flex-direction: column;
+  width: 100%;}
 }
 
 .title h1 span {
@@ -654,17 +699,32 @@ header {
   align-items: center;
   padding-left: 24px;
   display: flex;
+
+  @media only screen and (max-width: 576px) {
+  text-align: right;
+margin-left: auto;
+margin-top: 0;
+}
 }
 .slider {
   box-shadow: -24px -66px 200px rgba(0, 0, 0, 0.4);
   background-color: #000000;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
   margin-top: -322px;
-  
-  padding: 32px 16px;
+  .link {
+    text-align: center;
+  }
+  padding: 90px 15px 83px 15px;
+  @media only screen and (max-width: 1200px) {
+    padding: 30px 15px;
+  }
+
 }
 .slider img {
   max-width: 14%;
+  @media only screen and (max-width: 576px) {
+    max-width: 30%;
+   }
 }
 
 .slider p {
@@ -674,18 +734,50 @@ header {
   color: #fff;
   line-height: 36px;
   font-size: 23px;
+  margin-bottom: 0;
+
+  @media only screen and (max-width: 1200px) {
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: normal;
+    margin-top: 15px;
+  }
+  @media only screen and (max-width: 576px) {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: normal;
+    margin-bottom: 0;
+   }
 }
 .advantages {
+  padding-top: 60px;
   box-shadow: -24px -66px 200px rgba(0, 0, 0, 0.4);
   background-color: #000;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
-  margin-top: -440px;
+  margin-top: -680px;
+  padding-bottom: 80px;
+  @media only screen and (max-width: 1200px) {
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 30px;
+padding-bottom: 30px;
+   }
+  @media only screen and (max-width: 576px) {
+    padding-bottom: 15px;
+    padding-top: 30px;
+   }
 }
 .advantages h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 70px;
   text-transform: uppercase;
   font-weight: 400;
+  @media only screen and (max-width: 1200px) {
+    margin-bottom: 30px;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 28px;
+  }
 }
 
 .boxes {
@@ -693,6 +785,14 @@ header {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media only screen and (max-width: 576px) {
+   padding: 0 15px;
+  }
+}
+.contact-together{
+display: flex;
+align-items: center;
 }
 
 .box {
@@ -703,20 +803,27 @@ header {
   margin-bottom: 20px;
   background: #fff;
   flex: 0 1 calc(33% - 10px);
-  padding: 25px;
-  max-width: 350px;
-  width: 100%;
+  height: 190px;
+  @media only screen and (max-width: 1200px) {
+    flex: 0 1 calc(50% - 10px);
+   }
+  @media only screen and (max-width: 576px) {
+   flex: 1 1 100%;
+   }
 }
 .box h3 {
   text-transform: uppercase;
   text-align: center;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 20px;
+  padding-bottom: 16px;
+  padding-top: 27px;
   margin: 0;
 }
 
 .box p {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 267px;
 }
 
 footer {
@@ -736,7 +843,7 @@ footer {
 
 .visit-us {
 margin-top: 50px;
-background: url(../images/uzovovky.svg) no-repeat,  url(../images/uvozovky_dolni.svg) no-repeat;
+margin-bottom: 60px;
 }
 
 .contacts,
@@ -752,21 +859,20 @@ background: url(../images/uzovovky.svg) no-repeat,  url(../images/uvozovky_dolni
 .logo {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
+
+  @media only screen and (max-width: 576px) {
+    flex-wrap:wrap;}
 }
 .logo img {
-  width: 100%;
-  max-width: 40%;
+  width: 223px;
+  @media only screen and (max-width: 576px) {
+    max-width: 30%;
+  }
 }
 .amadeus-logo img {
   max-width: 40%;
 }
 
-@media only screen and (max-width: 576px) {
-  .logo {
-    margin-bottom: 32px;
-  }
-}
 
 .icon-box {
   display: flex;
@@ -774,13 +880,12 @@ background: url(../images/uzovovky.svg) no-repeat,  url(../images/uvozovky_dolni
   align-items: center;
   justify-content: center;
   gap: 16px;
+ 
 }
 .icon-box__icon {
-  min-width: 40px;
-  width: 40px;
-  background-color: rgba(16, 63, 143, 0.85);
-  border-radius: 50%;
-  aspect-ratio: 1/1;
+  min-width: 17px;
+  width: 17px;
+   padding-right: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -788,7 +893,7 @@ background: url(../images/uzovovky.svg) no-repeat,  url(../images/uvozovky_dolni
 .icon-box__icon svg {
   width: 24px;
   height: 24px;
-  fill: #ffffff;
+  fill: #000;
 }
 .icon-box__icon--small svg {
   width: 20px;
@@ -848,8 +953,8 @@ background: url(../images/uzovovky.svg) no-repeat,  url(../images/uvozovky_dolni
     gap: 16px;
   }
   .icon-box--bigger .icon-box__icon {
-    min-width: 40px;
-    width: 40px;
+    min-width: 17px;
+    width: 17px;
   }
   .icon-box--bigger .icon-box__icon svg {
     width: 24px;
@@ -879,16 +984,6 @@ background: url(../images/uzovovky.svg) no-repeat,  url(../images/uvozovky_dolni
     flex-wrap: wrap;
     gap: 24px;
   }
-}
-
-.articles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-.articles--amadeus {
-  margin-top: 72px;
 }
 
 .links {
