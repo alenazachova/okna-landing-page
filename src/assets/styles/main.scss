@@ -39,6 +39,8 @@ header {
   right: 0;
   margin: auto;
   cursor: pointer;
+  @media only screen and (max-width: 1200px) {
+    display: none;    }
 }
 
 .icon-scroll,
@@ -548,14 +550,17 @@ footer {
     position: absolute;
     top: 58%;
     left: 0;
-    width: 1600px;
+    width: 100%;
+    max-width: 1600px;
     height: 1px;
     
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 100%);
     
     opacity: 0.3;
+    @media only screen and (max-width: 1200px) {
+    top: 77%;    }
     @media only screen and (max-width: 576px) {
-      top: 51%;
+      top: 53%;
     }
 
   }
