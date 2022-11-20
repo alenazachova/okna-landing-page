@@ -3,7 +3,6 @@
 
 html {
   font-family: 'Nunito Sans', sans-serif;
-  // font-family: "Open Sans", sans-serif;
   color: #fff;
 
 }
@@ -15,9 +14,12 @@ body {
 header {
   margin-bottom: -136.8px;
   padding: 32px 16px;
-  background-image: linear-gradient(180deg, #000000 0%, #000000 20%, rgba(0, 0, 0, 0) 100%);
-  background-color: rgba(0, 0, 0, 0.7019607843137254);
-  filter: drop-shadow(12.155px 68.937px 75px rgba(0, 0, 0, 0.6));
+  background-image: linear-gradient(180deg, #000 0%, #000 20%, rgba(0, 0, 0, 0) 100%);
+  background-color: rgba(0, 0, 0, 0.7);
+  filter: drop-shadow(12px 69px 75px rgba(0, 0, 0, 0.6));
+
+  position: relative;
+  z-index: 10;
 
   @media only screen and (max-width: 1440px) {
     flex-wrap: wrap;
@@ -32,68 +34,40 @@ header {
 
 .intro__mouse {
   height: 5rem;
-  width: 3rem;
+  width: 5rem;
   position: absolute;
   bottom: 2rem;
   left: 0;
   right: 0;
   margin: auto;
   cursor: pointer;
+
   @media only screen and (max-width: 1200px) {
     display: none;
   }
-}
 
-.icon-scroll,
-.icon-scroll:before {
-  position: absolute;
-  left: 50%;
-}
+  .icon-scroll {
+    width: 5rem;
+    height: 5rem;
+    bottom: 0;
+    background-color: #fff;
+    border-radius: 50%;
 
-.icon-scroll {
-  width: 70px;
-  height: 70px;
-  bottom: 0;
-  margin-top: -10px;
-  background: #fff;
-  border-radius: 50%;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.icon-scroll:before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: rgba(0, 0, 0, 0.65);
-  margin-left: -4px;
-  top: 8px;
-  border-radius: 4px;
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: scroll;
-  animation-name: scroll;
-}
+    svg {
+      rotate: 180deg;
 
-.intro__mouse-opposite {
-  position: relative;
-  bottom: auto;
-  top: 0;
-}
-
-.icon-scroll-opposite {
-  margin-top: 0;
-}
-
-.icon-scroll-opposite:before {
-  top: auto;
-  bottom: 8px;
-  -webkit-animation-name: scroll-opposite;
-  animation-name: scroll-opposite;
+      display: block;
+      max-width: 50%;
+    }
+  }
 }
 
 
-.contacts, .logos, .links {
+.logos, .links {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -236,23 +210,6 @@ header {
 
       }
     }
-  }
-}
-
-.contacts {
-  width: 75%;
-
-  justify-content: space-evenly;
-  gap: 32px;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
-
-  @media only screen and (max-width: 576px) {
-    flex-wrap: wrap;
-
-    gap: 24px;
   }
 }
 
@@ -432,10 +389,13 @@ h4 {
 
 .bathroom {
   width: 100%;
-  background: url(../images/../new-images/bath_with_a_view_default.jpg) no-repeat;
-  height: 100%;
-  background-size: 100%;
-  min-height: 99vw;
+  background-image: url(../images/../new-images/bath_with_a_view_default.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 99vw;
+  max-height: 1920px;
+
 
   @media (min-width: 432px) {
     background-image: url(../images/../new-images/bath_with_a_view_432.jpg);
@@ -451,28 +411,30 @@ h4 {
   @media (min-width: 1440px) {
     background-image: url(../images/../new-images/bath_with_a_view_1440.jpg);
   }
-
 }
 
-.bg-bath {
+.bg-header {
   width: 100%;
-  background: url(../images/../new-images/living_room_default.jpg) no-repeat;
-  height: 100%;
-  background-size: 100%;
-  min-height: 56vw;
+  background-image: url(../images/../new-images/living_room_default.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+
+  position: relative;
 
   @media (min-width: 432px) {
-    background: url(../images/../new-images/living_room_432.jpg) no-repeat;
+    background-image: url(../images/../new-images/living_room_432.jpg);
   }
   @media (min-width: 768px) {
-    background: url(../images/../new-images/living_room_768.jpg) no-repeat;
+    background-image: url(../images/../new-images/living_room_768.jpg);
   }
   @media (min-width: 1024px) {
-    background: url(../images/../new-images/living_room_1024.jpg) no-repeat;
+    background-image: url(../images/../new-images/living_room_1024.jpg);
 
   }
   @media (min-width: 1440px) {
-    background: url(../images/../new-images/living_room_1440.jpg) no-repeat;
+    background-image: url(../images/../new-images/living_room_1440.jpg);
   }
 }
 
@@ -759,7 +721,6 @@ footer a {
   color: #000;
   flex-direction: column;
   flex: 0 1 50%;
-  background: url(../images/uzovovky.svg) no-repeat bottom 8% right 60%, url(../images/uvozovky_dolni.svg) no-repeat left 18px bottom 40%;
 
   @media only screen and (max-width: 576px) {
     flex: 1 1 100%;
@@ -798,8 +759,9 @@ footer a {
   }
 }
 
-.gcm-contacts {
+.contacts {
   padding-top: 18px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   color: #000;
@@ -811,52 +773,56 @@ footer a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @media only screen and (max-width: 576px) {
     flex-wrap: wrap;
   }
-}
 
-.title h1 {
-  text-transform: uppercase;
-  margin-bottom: 0;
-  font-size: 52px;
-  font-weight: 200;
-  display: flex;
-  flex-direction: row;
-  @media only screen and (max-width: 820px) {
-    font-size: 37px;
+  h1 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-size: 52px;
+    font-weight: 200;
+    display: flex;
+    flex-direction: row;
+
+    @media only screen and (max-width: 820px) {
+      font-size: 37px;
+    }
+
+    @media only screen and (max-width: 576px) {
+      font-size: 30px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      flex-direction: column;
+      width: 100%;
+    }
+
   }
 
-  @media only screen and (max-width: 576px) {
-    font-size: 30px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    flex-direction: column;
-    width: 100%;
-  }
-}
+  span {
+    text-transform: uppercase;
+    font-weight: bold;
+    align-items: center;
+    padding-left: 24px;
+    display: flex;
 
-.title h1 span {
-  text-transform: uppercase;
-  font-weight: bold;
-  align-items: center;
-  padding-left: 24px;
-  display: flex;
-  @media only screen and (max-width: 820px) {
-    font-size: 19px;
-  }
+    @media only screen and (max-width: 820px) {
+      font-size: 19px;
+    }
 
-  @media only screen and (max-width: 576px) {
-    text-align: right;
-    margin-left: auto;
-    margin-top: 0;
+    @media only screen and (max-width: 576px) {
+      text-align: right;
+      margin-left: auto;
+      margin-top: 0;
+    }
   }
 }
 
 .slider {
   filter: drop-shadow(-23.941px -65.778px 100px rgba(0, 0, 0, 0.4));
   background-image: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 50%, #000000 100%);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   background-size: 1920px 100%;
   background-position: 50% 0;
   margin-bottom: -463px;
@@ -877,56 +843,56 @@ footer a {
     padding: 30px 15px;
   }
 
-}
-
-.slider img {
-  max-width: 14%;
-  @media only screen and (max-width: 576px) {
-    max-width: 30%;
+  img {
+    max-width: 14%;
+    @media only screen and (max-width: 576px) {
+      max-width: 30%;
+    }
   }
-}
 
-.slider p {
-  margin-top: 66px;
-  font-weight: 200;
-  text-align: center;
-  color: #fff;
-  line-height: 36px;
-  font-size: 23px;
-  margin-bottom: 0;
-
-  @media only screen and (max-width: 1200px) {
+  p {
+    margin-top: 66px;
+    font-weight: 200;
+    text-align: center;
+    color: #fff;
+    line-height: 36px;
+    font-size: 23px;
     margin-bottom: 0;
-    font-size: 20px;
-    line-height: normal;
-    margin-top: 15px;
+
+    @media only screen and (max-width: 1200px) {
+      margin-bottom: 0;
+      font-size: 20px;
+      line-height: normal;
+      margin-top: 15px;
+    }
+    @media only screen and (max-width: 576px) {
+      margin-top: 15px;
+      font-size: 16px;
+      line-height: normal;
+      margin-bottom: 0;
+    }
   }
-  @media only screen and (max-width: 576px) {
-    margin-top: 15px;
-    font-size: 16px;
-    line-height: normal;
-    margin-bottom: 0;
-  }
+
 }
 
 .advantages {
   padding-top: 60px;
-  background-image: linear-gradient(0deg, rgba(66, 76, 79, 0.702) 0%, rgba(101, 122, 129, 0.902) 50%, rgba(101, 122, 129, 0.902) 50%, rgba(101, 122, 129, 0) 100%);
-  background-color: rgba(134, 154, 160, 0.7019607843137254);
+  background-image: linear-gradient(0deg, rgba(66, 76, 79, 0.7) 0%, rgba(101, 122, 129, 0.9) 50%, rgba(101, 122, 129, 0.9) 50%, rgba(101, 122, 129, 0) 100%);
+  background-color: rgba(134, 154, 160, 0.7);
   background-size: 1920px 100%;
   background-position: 50% 0;
   margin-top: -680px;
   padding-bottom: 80px;
+
   @media only screen and (max-width: 1200px) {
     margin-top: -20%;
   }
+
   @media only screen and (max-width: 1200px) {
-    padding-left: 15px;
-    padding-right: 15px;
     margin-top: -15%;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px 15px;
   }
+
   @media only screen and (max-width: 576px) {
     padding-bottom: 15px;
     padding-top: 30px;
@@ -938,9 +904,11 @@ footer a {
   margin-bottom: 70px;
   text-transform: uppercase;
   font-weight: 400;
+
   @media only screen and (max-width: 1200px) {
     margin-bottom: 30px;
   }
+
   @media only screen and (max-width: 576px) {
     font-size: 28px;
   }
@@ -971,29 +939,30 @@ footer a {
   background: #fff;
   flex: 0 1 calc(33% - 10px);
   height: 190px;
+
   @media only screen and (max-width: 1200px) {
     flex: 0 1 calc(50% - 10px);
   }
+
   @media only screen and (max-width: 576px) {
     flex: 1 1 100%;
   }
-}
 
-.box h3 {
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 600;
-  font-size: 20px;
-  padding-bottom: 16px;
-  padding-top: 27px;
-  margin: 0;
-}
+  h3 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 16px;
+    padding-top: 27px;
+    margin: 0;
+  }
 
-.box p {
-  margin: 0 auto;
-  max-width: 267px;
+  p {
+    margin: 0 auto;
+    max-width: 267px;
+  }
 }
-
 
 .content {
   display: flex;
@@ -1006,11 +975,13 @@ footer a {
 }
 
 .visit-us {
-  margin-top: 50px;
-  margin-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+
+
+  background: url(../images/uzovovky.svg) no-repeat top 7% left 4%, url(../images/uvozovky_dolni.svg) no-repeat left 45% bottom 14%;
 }
 
-.contacts,
 .logos,
 .links {
   display: flex;
@@ -1027,24 +998,26 @@ footer a {
   @media only screen and (max-width: 576px) {
     flex-wrap: wrap;
   }
-}
 
-.logo img {
-  width: 223px;
-  @media only screen and (max-width: 576px) {
-    max-width: 50%;
+  img {
+    width: 223px;
+    @media only screen and (max-width: 576px) {
+      max-width: 50%;
+    }
   }
 }
 
-.amadeus-logo a {
-  width: 100%;
-  max-width: 105px;
-}
+.amadeus-logo {
+  a {
+    width: 100%;
+    max-width: 105px;
+  }
 
-.amadeus-logo img {
-  max-width: 105px;
-  @media only screen and (max-width: 576px) {
-    max-width: 50%;
+  img {
+    max-width: 105px;
+    @media only screen and (max-width: 576px) {
+      max-width: 50%;
+    }
   }
 }
 
@@ -1153,25 +1126,6 @@ footer a {
   .icon-box--bigger .icon-box__link:link,
   .icon-box--bigger .icon-box__link:visited {
     font-size: 18px;
-  }
-}
-
-.contacts {
-  width: 75%;
-  justify-content: space-evenly;
-  gap: 32px;
-}
-
-@media only screen and (max-width: 768px) {
-  .contacts {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .contacts {
-    flex-wrap: wrap;
-    gap: 24px;
   }
 }
 
