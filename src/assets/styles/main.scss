@@ -589,8 +589,10 @@ footer a {
 
 
 .slider {
+  // The problem for iOS solved below ⬇️
   position: relative;
   //filter: drop-shadow(-23.941px -65.778px 100px rgba(0, 0, 0, 0.4));
+
   box-shadow: -23.941px -65.778px 100px rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(90deg, #000 0%, transparent 50%, #000 100%);
   background-color: rgba(0, 0, 0, 0.6);
