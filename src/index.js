@@ -14,22 +14,41 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 });
 
-//  const number = document.querySelector("#number");
-
 function getSelectionText() {
-  const email = document.querySelector("#email");
+  var text = "";
   if (window.getSelection) {
-    email = window.getSelection().toString();
+    text = window.getSelection().toString();
   } else if (document.selection && document.selection.type != "Control") {
-    email = document.selection.createRange().email;
+    text = document.selection.createRange().text;
   }
-  return email;
+  return text;
 }
 
 document.addEventListener("copy", function (e) {
-  dataLayer.push({
-    event: "textCopied",
-    clipboardText: getSelectionText(),
-    clipboardLength: getSelectionText().length,
-  });
+  const copiedEmail = document.querySelector("#email");
+  const copiedNumber = document.querySelector("#number");
+
+  if (copiedEmail && window.getSelection) {
+    const selectedEmailText = getSelectionText();
+    if (selectedEmailText.length > 0) {
+      dataLayer.push({
+        event: "textCopied",
+        copiedElement: "email",
+        clipboardText: selectedEmailText,
+        clipboardLength: selectedEmailText.length,
+      });
+    }
+  }
+
+  if (copiedNumber && window.getSelection) {
+    const selectedNumberText = getSelectionText();
+    if (selectedNumberText.length > 0) {
+      dataLayer.push({
+        event: "textCopied",
+        copiedElement: "number",
+        clipboardText: selectedNumberText,
+        clipboardLength: selectedNumberText.length,
+      });
+    }
+  }
 });
